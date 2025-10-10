@@ -7,16 +7,70 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar');
   const ctaButton = document.querySelector('.cta-button');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+  // Carousel navigation - radio buttons only
+  const radioButtons = document.querySelectorAll('input[name="position"]');
+  const carousel = document.getElementById('carousel');
+
+  // Update carousel position when radio buttons are clicked
+  radioButtons.forEach((radio, index) => {
+    radio.addEventListener('change', () => {
+      if (radio.checked) {
+        const position = index + 1;
+        carousel.style.setProperty('--position', position);
+        console.log('Carousel position updated to:', position);
+      }
+    });
   });
 
+  // Simple hamburger menu
+  console.log('Setting up hamburger menu...');
+  console.log('Hamburger element:', hamburger);
+  console.log('Nav menu element:', navMenu);
+
+  function toggleMobileMenu() {
+    console.log('Toggle menu called');
+    if (hamburger && navMenu) {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      console.log('Menu toggled');
+    }
+  }
+
+  // Add click event to hamburger
+  if (hamburger) {
+    hamburger.onclick = function() {
+      console.log('Hamburger clicked!');
+      toggleMobileMenu();
+    };
+  }
+
+  // Close menu when clicking nav links
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.onclick = function() {
+      if (hamburger && navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    };
+  });
+
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
-    });
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
   });
 
   window.addEventListener('scroll', () => {
@@ -150,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
   motifCards.forEach((card, index) => {
     card.style.animationDelay = `${index * 0.1}s`;
   });
+
 
   console.log('%c🎨 Batik Nusantara Website', 'font-size: 20px; font-weight: bold; color: #8B4513;');
   console.log('%cMelestarikan Warisan Budaya Indonesia', 'font-size: 14px; color: #666;');
