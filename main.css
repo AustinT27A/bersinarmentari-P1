@@ -443,7 +443,7 @@ main#carousel {
   grid-row: 1 / 2;
   grid-column: 1 / 8;
   width: 100vw;
-  height: 500px;
+  height: 500px; /* tetap sama, sesuaikan bila perlu */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,21 +453,41 @@ main#carousel {
   --items: 5;
   --middle: 3;
   --position: 3;
-  pointer-events: none;
+  pointer-events: auto; /* allow hover interactions inside carousel */
   flex-direction: row;
+  --item-w: 300px;    /* ukuran item (ubah di sini jika ingin lebih besar/kecil) */
+  --item-h: 400px;
 }
 
 div.item {
   position: absolute;
-  width: 300px;
-  height: 400px;
-  background-color: coral;
+  width: var(--item-w);
+  height: var(--item-h);
+  background-color: coral; /* warna 'base' kotak tetap ada di bawah gambar */
+  overflow: hidden;        /* kunci: pastikan konten (gambar) tidak keluar kotak */
+  backface-visibility: hidden;
   --r: calc(var(--offset) - var(--position));
   --abs: max(calc(var(--r) * -1), var(--r));
   transition: all 0.25s linear;
   transform: rotateY(calc(-10deg * var(--r)))
-    translateX(calc(300px * var(--r)));
+    translateX(calc(var(--item-w) * var(--r)));
   z-index: calc((var(--position) - var(--abs)));
+  pointer-events: auto; /* enable hover on each item */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* tetap absolute untuk carousel */
+  overflow: hidden;   /* pastikan gambar tidak keluar kotak */
+}
+
+/* pastikan gambar di dalam .item menyesuaikan kotak */
+div.item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: filter 260ms ease; /* smooth darken on hover */
   pointer-events: none;
 }
 
@@ -587,41 +607,11 @@ div.item:nth-of-type(5) {
   transition: var(--transition);
 }
 
-.gallery-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg,
-    rgba(139, 69, 19, 0.8) 0%,
-    rgba(212, 165, 116, 0.8) 100%);
-  transition: var(--transition);
-}
-
-.gallery-item[data-region="Yogyakarta"]::before {
-  background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(180, 90, 30, 0.9));
-}
-
-.gallery-item[data-region="Solo"]::before {
-  background: linear-gradient(135deg, rgba(70, 50, 40, 0.9), rgba(120, 80, 60, 0.9));
-}
-
-.gallery-item[data-region="Pekalongan"]::before {
-  background: linear-gradient(135deg, rgba(200, 150, 100, 0.9), rgba(220, 180, 140, 0.9));
-}
-
-.gallery-item[data-region="Cirebon"]::before {
-  background: linear-gradient(135deg, rgba(50, 100, 150, 0.9), rgba(100, 150, 200, 0.9));
-}
-
-.gallery-item[data-region="Madura"]::before {
-  background: linear-gradient(135deg, rgba(150, 50, 50, 0.9), rgba(200, 100, 100, 0.9));
-}
-
-.gallery-item[data-region="Bali"]::before {
-  background: linear-gradient(135deg, rgba(200, 150, 50, 0.9), rgba(230, 200, 100, 0.9));
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .gallery-item:hover {
@@ -629,24 +619,15 @@ div.item:nth-of-type(5) {
   box-shadow: var(--shadow-hover);
 }
 
-.gallery-item:hover::before {
-  opacity: 0.7;
-}
-
 .gallery-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 32px;
-  color: var(--white);
-  z-index: 1;
-  transform: translateY(20px);
-  transition: var(--transition);
-}
-
-.gallery-item:hover .gallery-overlay {
-  transform: translateY(0);
+  padding: 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+   color: var(--white);
+   z-index: 1;
 }
 
 .gallery-overlay h3 {
@@ -1042,4 +1023,45 @@ div.item:nth-of-type(5) {
   .container {
     padding: 0 16px;
   }
+}
+
+/* overlay teks di atas gambar */
+.item-overlay{
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.55) 100%);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 260ms ease, transform 260ms ease;
+  z-index: 5;
+}
+
+.item-overlay h4{
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.item-overlay p{
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* hover: gelapkan gambar sedikit dan munculkan overlay */
+div.item:hover img{
+  filter: brightness(0.6);
+  transition: filter 260ms ease;
+}
+
+div.item:hover .item-overlay{
+  opacity: 1;
+  transform: translateY(0);
 }
