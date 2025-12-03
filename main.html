@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +17,7 @@
   <body>
     <nav class="navbar">
       <div class="nav-container">
-        <div class="logo">Bersinar Mentari Batik</div>
+        <div class="logo">Bersinar Mentari</div>
         <ul class="nav-menu">
           <li><a href="#home" class="nav-link">Beranda</a></li>
           <li><a href="#about" class="nav-link">Tentang</a></li>
@@ -35,7 +36,7 @@
     <section id="home" class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1 class="hero-title">Pesona Kain Batik</h1>
+        <h1 class="hero-title">Bersinar Mentari</h1>
         <p class="hero-subtitle">Warisan Budaya Tak Benda UNESCO dari Indonesia</p>
         <button class="cta-button">Jelajahi Koleksi
           <div class="star-1">
@@ -298,45 +299,82 @@
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Hubungi Kami</h2>
-          <div class="section-line"></div>
+    <section class="contact-section">
+    <div class="contact-container">
+        
+        <!-- Left info box -->
+        <div class="contactInfo">
+            <div>
+                <h2>Kontak</h2>
+                <ul class="info">
+    <li>
+        <i class="fa-solid fa-location-dot"></i>
+        <span>
+            Desa Lukbayur<br>
+            Rt. 04<br>
+            Kec. Tanta<br>
+            Kab. Tabalong
+        </span>
+    </li>
+    <li>
+        <i class="fa-solid fa-envelope"></i>
+        <span>khirufata242@gmail.com</span>
+    </li>
+    <li>
+        <i class="fa-brands fa-instagram"></i>
+        <span>@khirufata242</span>
+    </li>
+</ul>
+            </div>
+
+            <ul class="socialIcon">
+                <li><a href="#"><img src="img/1.png" alt=""></a></li>
+                <li><a href="#"><img src="img/2.png" alt=""></a></li>
+                <li><a href="#"><img src="img/3.png" alt=""></a></li>
+                <li><a href="#"><img src="img/4.png" alt=""></a></li>
+                <li><a href="#"><img src="img/5.png" alt=""></a></li>
+            </ul>
         </div>
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
-              <div>
-                <h4>Alamat</h4>
-                <p>Jl. Batik Indonesia No. 123, Jakarta</p>
-              </div>
+
+        <!-- Right form box -->
+        <div class="contactForm">
+            <h2>Kirimkan Pesan</h2>
+            <div class="formBox">
+
+                <div class="inputBox w50">
+                    <input type="text" required>
+                    <span>Nama Depan</span>
+                </div>
+
+                <div class="inputBox w50">
+                    <input type="text" required>
+                    <span>Nama Belakang</span>
+                </div>
+
+                <div class="inputBox w50">
+                    <input type="email" required>
+                    <span>Email</span>
+                </div>
+
+                <div class="inputBox w50">
+                    <input type="text" required>
+                    <span>Nomor Telpon</span>
+                </div>
+
+                <div class="inputBox w100">
+                    <textarea required></textarea>
+                    <span>Tuliskan pesan disini...</span>
+                </div>
+
+                <div class="inputBox w100">
+                    <input type="submit" value="Kirim">
+                </div>
+
             </div>
-            <div class="contact-item">
-              <div class="contact-icon">📧</div>
-              <div>
-                <h4>Email</h4>
-                <p>info@batiknusantara.id</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">📱</div>
-              <div>
-                <h4>Telepon</h4>
-                <p>+62 812-3456-7890</p>
-              </div>
-            </div>
-          </div>
-          <form class="contact-form">
-             <input type="text" placeholder="Nama Anda" required>
-             <input type="email" placeholder="Email Anda" required>
-             <textarea placeholder="Pesan Anda" rows="5" required></textarea>
-             <button type="submit" class="submit-button">Kirim Pesan</button>
-           </form>
         </div>
-      </div>
-    </section>
+
+    </div>
+</section>
 
     <footer class="footer"> 
       <div class="container">
