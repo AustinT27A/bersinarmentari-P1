@@ -169,51 +169,54 @@
           </div>
         </div>
       </div>
-      <div class="about-carousel">
-        <input type="radio" name="position" />
-        <input type="radio" name="position" />
-        <input type="radio" name="position" checked />
-        <input type="radio" name="position" />
-        <input type="radio" name="position" />
-        <main id="carousel">
-          <div class="item">
-            <img src="Assets/Photo/Batik1.jpg" alt="Batik 1">
-            <div class="item-overlay">
-              <h4>Perajin Tradisional</h4>
-              <p>Proses membatik tangan</p>
+      <div class="container">
+        <div class="about-content">
+          <!-- kiri: daftar kain -->
+          <div class="about-list">
+            <div class="list-item" data-index="0">
+              <h3>Motif Langsat</h3>
+              <p>melambangkan kesuburan dan kemakmuran, terinspirasi dari buah langsat yang menjadi simbol kelimpahan dan keberlanjutan hidup. Motif ini mencerminkan hubungan harmonis antara manusia dan alam serta nilai kebersamaan dalam masyarakat Dayak, dengan harapan akan kehidupan yang makmur dan penuh keberuntungan.
+</p>
+            </div>
+            <div class="list-item" data-index="1">
+              <h3>Motif Gigi Haruan</h3>
+              <p>menggambarkan ketangguhan dan perlindungan. Terinspirasi dari gigi ikan haruan, yang dikenal karena kekuatannya dalam bertahan hidup, motif ini mencerminkan daya tahan, kelincahan, dan keberanian dalam menghadapi bahaya. Ia juga menjadi simbol kekuatan untuk melindungi diri dan keluarga.
+</p>
+            </div>
+            <div class="list-item" data-index="2">
+              <h3>Motif Tameng Dayak</h3>
+              <p>adalah simbol kekuatan dan perlindungan spiritual. Terinspirasi dari perisai tradisional Dayak, motif ini melambangkan keberanian, proteksi dari energi negatif, serta identitas suku dan garis keturunan. Ia sering digunakan untuk menunjukkan perlindungan baik dalam peperangan maupun kehidupan sehari-hari.</p>
+            </div>
+            <div class="list-item" data-index="3">
+              <h3>Motif Naga Berlembu</h3>
+              <p>melambangkan kekuatan agung, perlindungan, dan keseimbangan alam. Terinspirasi dari sosok naga dalam kepercayaan Dayak yang dianggap sebagai penjaga dunia dan pemberi kehidupan, motif ini menggambarkan wibawa, kebijaksanaan, serta kekuatan spiritual yang mengalir dalam masyarakat. Naga berlembur juga menjadi simbol harmoni antara manusia, roh, dan alam semesta.</p>
             </div>
           </div>
-          <div class="item">
-            <img src="Assets/Photo/Batik2.jpg" alt="Batik 2">
-            <div class="item-overlay">
-              <h4>Pewarnaan</h4>
-              <p>Warna alami dan teknik tradisional</p>
+
+          <!-- kanan: panel gambar besar (slider) -->
+          <div class="about-gallery">
+            <div class="slider-container">
+              <button class="slider-btn prev" aria-label="Sebelumnya" onclick="prevImage()">❮</button>
+              <div class="slider-wrapper" id="sasirangan-slider">
+                <img src="Assets/Photo/Batik1.jpg" class="gallery-img active" alt="Pecah Kulit">
+                <img src="Assets/Photo/Batik2.jpg" class="gallery-img" alt="Karang">
+                <img src="Assets/Photo/Batik3.jpg" class="gallery-img" alt="Bintang">
+                <img src="Assets/Photo/Batik6.png" class="gallery-img" alt="Bunga">
+                <img src="Assets/Photo/Batik11.png" class="gallery-img" alt="Koleksi">
+              </div>
+              <button class="slider-btn next" aria-label="Selanjutnya" onclick="nextImage()">❯</button>
+            </div>
+            <div class="slider-dots" id="sasirangan-dots">
+              <span class="dot active" onclick="currentImage(0)"></span>
+              <span class="dot" onclick="currentImage(1)"></span>
+              <span class="dot" onclick="currentImage(2)"></span>
+              <span class="dot" onclick="currentImage(3)"></span>
+              <span class="dot" onclick="currentImage(4)"></span>
             </div>
           </div>
-          <div class="item">
-            <img src="Assets/Photo/Batik3.jpg" alt="Batik 3">
-            <div class="item-overlay">
-              <h4>Motif Klasik</h4>
-              <p>Warisan motif nusantara</p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="Assets/Photo/Batik4.jpg" alt="Batik 4">
-            <div class="item-overlay">
-              <h4>Detail Rapi</h4>
-              <p>Tekstur dan detail halus</p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="Assets/Photo/Batik5.jpg" alt="Batik 5">
-            <div class="item-overlay">
-              <h4>Koleksi</h4>
-              <p>Kumpulan motif pilihan</p>
-            </div>
-          </div>
-        </main>
+        </div>
       </div>
-    </section>
+     </section>
 
     <div class="collage-container">
       <div class="about-header">
@@ -268,37 +271,6 @@
           <p id="modal-text"></p>
         </div>
       </div>
-
-    <section id="motif" class="motif">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Filosofi Motif</h2>
-          <div class="section-line"></div>
-        </div>
-        <div class="motif-cards">
-          <div class="motif-card">
-            <div class="motif-icon">⚔</div>
-            <h3>Parang</h3>
-            <p>Melambangkan kekuatan dan keteguhan hati dalam menghadapi rintangan hidup</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-icon">🌸</div>
-            <h3>Kawung</h3>
-            <p>Simbol kesucian, keadilan, dan kebijaksanaan yang sempurna</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-icon">☁</div>
-            <h3>Mega Mendung</h3>
-            <p>Melambangkan ketenangan jiwa dan pembawa hujan berkah</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-icon">🦋</div>
-            <h3>Kupu-Kupu</h3>
-            <p>Simbol transformasi dan keindahan alam Indonesia</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="contact-section">
     <div class="contact-container">
@@ -385,6 +357,44 @@
 
     <script type="module" src="main.js"></script>
     <script src="collage.js"></script>
+   <script>
+     // Slider + list interaction for Sasirangan section
+     (function() {
+       let currentSlide = 0;
+       const images = () => document.querySelectorAll('#sasirangan-slider .gallery-img');
+       const dots = () => document.querySelectorAll('#sasirangan-dots .dot');
+       const listItems = () => document.querySelectorAll('.about-list .list-item');
+
+       function updateUI() {
+         images().forEach((img, i) => img.classList.toggle('active', i === currentSlide));
+         dots().forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+         listItems().forEach((li, i) => li.classList.toggle('active', i === currentSlide));
+       }
+
+       window.showImage = function(n) {
+         if (n >= images().length) currentSlide = 0;
+         else if (n < 0) currentSlide = images().length - 1;
+         else currentSlide = n;
+         updateUI();
+       };
+
+       window.nextImage = function() { showImage(currentSlide + 1); };
+       window.prevImage = function() { showImage(currentSlide - 1); };
+       window.currentImage = function(n) { showImage(n); };
+
+       document.addEventListener('DOMContentLoaded', function() {
+         // wire list clicks
+         listItems().forEach(li => {
+           li.addEventListener('click', function() {
+             const idx = Number(this.dataset.index);
+             currentImage(idx);
+           });
+         });
+         // initialize
+         updateUI();
+       });
+     })();
+   </script>
     
     <script>
       // Simple hamburger menu function

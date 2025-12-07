@@ -1470,3 +1470,174 @@ div.item:hover .item-overlay{
     font-size: 1em;
   }
 }
+
+.about-content {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 640px; /* kiri flexible, kanan fixed (besar) */
+  gap: 32px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+/* kiri: list seperti kartu */
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* kartu list */
+.about-list .list-item {
+  background: #f5e6d3; /* lembut/beige */
+  padding: 22px 20px;
+  border-radius: 12px;
+  border-left: 6px solid rgba(139,69,19,0.9);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* judul di dalam kartu */
+.about-list .list-item h3 {
+  margin-bottom: 8px;
+  color: var(--dark-color);
+  font-size: 18px;
+}
+
+/* deskripsi */
+.about-list .list-item p {
+  color: #6b5a4a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* state aktif / terpilih */
+.about-list .list-item.active {
+  background: linear-gradient(90deg, rgba(139,69,19,0.95), rgba(196,154,108,0.95));
+  color: #fff;
+  border-left-color: #fff;
+  transform: translateX(6px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.14);
+}
+.about-list .list-item.active h3,
+.about-list .list-item.active p {
+  color: #fff;
+}
+
+/* hover (interaksi) */
+.about-list .list-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* kanan: slider panel */
+.slider-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* wrapper gambar */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 600px; /* tinggi besar seperti screenshot */
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(180deg,#fbf6f1,#fff);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.12);
+}
+
+/* gambar besar */
+.gallery-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(40px) scale(1.02);
+  transition: opacity 420ms ease, transform 420ms ease, filter 320ms ease;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+/* tampilkan gambar aktif */
+.gallery-img.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+
+/* tombol prev/next berada melayang di tengah tinggi slider */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary-color);
+  color: #fff;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  cursor: pointer;
+  z-index: 30;
+  transition: transform 200ms ease, background 200ms ease;
+}
+.slider-btn.prev { left: -26px; }
+.slider-btn.next { right: -26px; }
+
+.slider-btn:hover { transform: translateY(-50%) scale(1.06); background: var(--dark-color); }
+
+/* dots di bawah, rata tengah */
+.slider-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+}
+.slider-dots .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #e0d5c6;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease;
+}
+.slider-dots .dot.active { background: var(--primary-color); transform: scale(1.15); }
+
+/* accessibility: focus visible */
+.about-list .list-item:focus,
+.slider-btn:focus,
+.slider-dots .dot:focus {
+  outline: 3px solid rgba(139,69,19,0.15);
+  outline-offset: 4px;
+}
+
+/* responsive: pada layar kecil, stack kiri-kanan */
+@media (max-width: 1000px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  .slider-wrapper { height: 420px; }
+  .slider-btn.prev { left: 8px; }
+  .slider-btn.next { right: 8px; }
+  .slider-btn { width: 46px; height: 46px; }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .slider-wrapper { height: 300px; }
+  .about-list .list-item { padding: 16px; }
+  .slider-btn { width: 40px; height: 40px; }
+  .slider-btn.prev { left: 6px; }
+  .slider-btn.next { right: 6px; }
+}
