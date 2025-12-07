@@ -1494,9 +1494,24 @@ div.item:hover .item-overlay{
   border-left: 6px solid rgba(139,69,19,0.9);
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
-  cursor: pointer;
+  cursor: default; /* tidak pointer */
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* gambar dan teks di tengah */
+  text-align: center;
+}
+
+/* jika ada gambar di dalam list-item, tengahkan dan beri margin bawah */
+.about-list .list-item img {
+  display: block;
+  margin: 18px auto 0 auto;
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(139,69,19,0.08);
+  order: 3; /* pastikan gambar muncul setelah teks */
 }
 
 /* judul di dalam kartu */
@@ -1515,15 +1530,17 @@ div.item:hover .item-overlay{
 
 /* state aktif / terpilih */
 .about-list .list-item.active {
-  background: linear-gradient(90deg, rgba(139,69,19,0.95), rgba(196,154,108,0.95));
-  color: #fff;
-  border-left-color: #fff;
-  transform: translateX(6px);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.14);
+  /* hilangkan background, warna, border, transform, box-shadow */
+  background: #f5e6d3;
+  color: inherit;
+  border-left-color: rgba(139,69,19,0.9);
+  transform: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  /* tidak ada perubahan pada gambar slider */
 }
 .about-list .list-item.active h3,
 .about-list .list-item.active p {
-  color: #fff;
+  color: var(--dark-color);
 }
 
 /* hover (interaksi) */
@@ -1545,11 +1562,14 @@ div.item:hover .item-overlay{
 .slider-wrapper {
   position: relative;
   width: 100%;
-  height: 600px; /* tinggi besar seperti screenshot */
+  height: 600px;
   border-radius: 14px;
   overflow: hidden;
   background: linear-gradient(180deg,#fbf6f1,#fff);
   box-shadow: 0 18px 60px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* gambar besar */
@@ -1564,12 +1584,15 @@ div.item:hover .item-overlay{
   transition: opacity 420ms ease, transform 420ms ease, filter 320ms ease;
   border-radius: 10px;
   pointer-events: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.02);
 }
 
 /* tampilkan gambar aktif */
 .gallery-img.active {
   opacity: 1;
-  transform: translateX(0) scale(1);
+  transform: translate(-50%, -50%) scale(1);
   pointer-events: auto;
 }
 
