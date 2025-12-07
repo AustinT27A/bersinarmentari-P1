@@ -10,7 +10,7 @@ html {
 
 
 :root {
-  --primary-color: #8B4513;
+  --primary-color: #5a2d0d;
   --secondary-color: #D4A574;
   --accent-color: #C49A6C;
   --dark-color: #2C1810;
@@ -224,30 +224,219 @@ h1, h2, h3, h4 {
 }
 
 .hero-subtitle {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 32px;
   font-weight: 300;
-  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
+.heroes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 8%;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.small-title {
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: #6f6f6f;
+}
+
+.heroes h1 {
+    font-size: 48px;
+    margin: 10px 0 20px;
+    font-weight: 700;
+}
+
+.heroes p {
+    color: #6a6a6a;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.discover-btn {
+    padding: 12px 25px;
+    background: var(--dark-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.discover-btn:hover {
+    background: var(--primary-color);
+}
+
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-box {
+    width: 500px;           /* ukuran gambar fix tapi tetap elegan */
+    height: 350px;          /* tinggi konsisten */
+    overflow: hidden;       /* crop otomatis */
+    border-radius: 15px;    /* agar gambar makin modern */
+    background: #eaeaff;    /* fallback kalau gambar belum load */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* jaga proporsi, crop halus */
+    object-position: center;
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 250px;
+    }
+
+    .img-box {
+        width: 250px;
+        height: 300px;
+    }
+}
+
+/* From Uiverse.io by mrhyddenn */ 
 .cta-button {
-  margin-top: 10px;
-  position: relative;
-  padding: 12px 35px;
-  background: #fec195;
-  font-size: 17px;
-  font-weight: 500;
-  color: #181818;
-  border: 3px solid #fec195;
-  border-radius: 8px;
-  box-shadow: 0 0 0 #fec1958c;
-  transition: all 0.3s ease-in-out;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--dark-color);
   cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.cta-button::before,
+.cta-button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid black;
+  transition: all .15s ease;
+}
+
+.cta-button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.cta-button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.cta-button:active,
+.cta-button:focus {
+  outline: none;
+}
+
+.cta-button:active::before,
+.cta-button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.cta-button:active::before {
+  top: 3px;
+}
+
+.cta-button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: whitesmoke;
+  background-color: var(--dark-color);
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: var(--dark-color);
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: var(--primary-color);;
+  color: var(--dark-color);
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
 }
 
 .cta-button:hover {
-  color: white;
-  box-shadow: 0 0 25px #fec1958c;
+  color: #0f1923;
+}
+
+.cta-button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.cta-button:hover .button_lg::after {
+  background-color: #fff;
+  color: var(--dark-color);
 }
 
 .star-1 {
@@ -420,6 +609,115 @@ h1, h2, h3, h4 {
   }
 }
 
+.about-container {
+      font-family: 'Poppins', sans-serif;
+        width: 90%;
+        max-width: 1200px;
+        margin: 60px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .left h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #2C1810;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .left p.desc {
+        color: #555;
+        margin-bottom: 35px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Card style */
+    .card {
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        background: #331c13;
+        color: white;
+    }
+    
+
+    .card img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .card .overlay {
+        background: #331c13;
+        padding: 30px;
+    }
+
+    .card h3 {
+        margin-top: 0;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .card p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    .card a {
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 1px solid transparent;
+        transition: 0.3s;
+    }
+
+    .card a:hover {
+        border-bottom: 1px solid #fff;
+    }
+
+    /* Right image box */
+    .right-img {
+        width: 100%;
+        height: 400px;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .right-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Second card on right */
+    .card-small {
+        max-width: 430px;
+        margin-left: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .container {
+            grid-template-columns: 1fr;
+        }
+
+        .card-small {
+            margin-left: 0;
+            max-width: 100%;
+        }
+
+        .right-img {
+            height: 250px;
+        }
+    }
+
 .section-header {
   text-align: center;
   margin-bottom: 64px;
@@ -427,7 +725,7 @@ h1, h2, h3, h4 {
 
 .section-title {
   font-size: 48px;
-  color: var(--dark-color);
+  color: var(--primary-color);
   margin-bottom: 16px;
 }
 
@@ -808,7 +1106,7 @@ div.item:nth-of-type(5) {
 }
 
 .contactForm h2 {
-    color: var(--dark-color);
+    color: var(--primary-color);
     font-size: 24px;
 }
 
@@ -890,7 +1188,7 @@ input[type="submit"]:hover {
 }
 
 .submit-button:hover {
-  background: var(--dark-color);
+  background: var(--primary-color);
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
 }
@@ -1246,11 +1544,11 @@ div.item:hover .item-overlay{
     var(--primary-color),
     var(--secondary-color),
     var(--accent-color),
-    var(--dark-color),
+    var(--primary-color),
     var(--primary-color),
      var(--secondary-color),
     var(--accent-color),
-    var(--dark-color),
+    var(--primary-color),
     var(--primary-color)
   );
   background-size: 400% 400%;
@@ -1331,11 +1629,11 @@ div.item:hover .item-overlay{
     var(--primary-color),
     var(--secondary-color),
     var(--accent-color),
-    var(--dark-color),
+    var(--primary-color),
     var(--primary-color),
     var(--secondary-color),
     var(--accent-color),
-    var(--dark-color),
+    var(--primary-color),
     var(--primary-color)
   );
   background-size: 300% 300%;
@@ -1517,7 +1815,7 @@ div.item:hover .item-overlay{
 /* judul di dalam kartu */
 .about-list .list-item h3 {
   margin-bottom: 8px;
-  color: var(--dark-color);
+  color: var(--primary-color);
   font-size: 18px;
 }
 
@@ -1540,7 +1838,7 @@ div.item:hover .item-overlay{
 }
 .about-list .list-item.active h3,
 .about-list .list-item.active p {
-  color: var(--dark-color);
+  color: var(--primary-color);
 }
 
 /* hover (interaksi) */
@@ -1618,7 +1916,7 @@ div.item:hover .item-overlay{
 .slider-btn.prev { left: -26px; }
 .slider-btn.next { right: -26px; }
 
-.slider-btn:hover { transform: translateY(-50%) scale(1.06); background: var(--dark-color); }
+.slider-btn:hover { transform: translateY(-50%) scale(1.06); background: var(--primary-color); }
 
 /* dots di bawah, rata tengah */
 .slider-dots {
@@ -1663,4 +1961,150 @@ div.item:hover .item-overlay{
   .slider-btn { width: 40px; height: 40px; }
   .slider-btn.prev { left: 6px; }
   .slider-btn.next { right: 6px; }
+}
+/* ===========================
+   RESPONSIVE — MAX WIDTH 1200px
+   =========================== */
+@media (max-width: 1200px) {
+
+  .contact-container {
+    min-width: auto;
+    width: 90%;
+  }
+
+  .contactForm {
+    margin-left: 200px;
+    padding-left: 230px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — TABLET LANDSCAPE
+   MAX WIDTH 992px
+   =========================== */
+@media (max-width: 992px) {
+
+  .contact-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    min-height: auto;
+    position: relative;
+  }
+
+  /* Left info full width */
+  .contactInfo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    top: 0;
+  }
+
+  /* Form di bawahnya */
+  .contactForm {
+    position: relative;
+    margin-left: 0;
+    padding: 50px 40px;
+    padding-left: 40px;
+    width: 100%;
+    height: auto;
+  }
+
+  .formBox {
+    gap: 20px;
+  }
+
+  .inputBox.w50 {
+    width: 48%;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — TABLET PORTRAIT
+   MAX WIDTH 768px
+   =========================== */
+@media (max-width: 768px) {
+
+  .inputBox.w50 {
+    width: 100%;
+  }
+
+  .contactInfo {
+    padding: 40px;
+  }
+
+  .contactForm {
+    padding: 40px 30px;
+  }
+
+  .contactInfo h2, 
+  .contactForm h2 {
+    font-size: 22px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE
+   MAX WIDTH 576px
+   =========================== */
+@media (max-width: 576px) {
+
+  .contact-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .contactInfo {
+    padding: 30px;
+  }
+
+  .contactForm {
+    padding: 30px 20px;
+  }
+
+  .inputBox span {
+    font-size: 14px;
+  }
+
+  input[type="submit"] {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .contactInfo ul.info li i {
+    font-size: 18px;
+  }
+
+  .contactInfo ul.socialIcon li img {
+    width: 22px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — SMALL MOBILE
+   MAX WIDTH 430px
+   =========================== */
+@media (max-width: 430px) {
+
+  .contactInfo h2,
+  .contactForm h2 {
+    font-size: 20px;
+  }
+
+  .inputBox input,
+  .inputBox textarea {
+    font-size: 15px;
+  }
+
+  .contactInfo {
+    padding: 25px;
+  }
+
+  .contactForm {
+    padding: 25px 18px;
+  }
 }

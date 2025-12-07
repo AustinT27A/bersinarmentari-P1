@@ -1,5 +1,15 @@
 import './main.css'
 
+const btn = document.querySelector(".discover-btn");
+
+btn.addEventListener("mouseover", () => {
+    btn.style.transform = "scale(1.05)";
+});
+
+btn.addEventListener("mouseout", () => {
+    btn.style.transform = "scale(1)";
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
@@ -135,20 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const motifName = item.querySelector('h3').textContent;
       alert(`Anda memilih ${motifName} dari ${region}!\n\nBatik ini memiliki keunikan dan karakteristik tersendiri yang mencerminkan budaya daerah ${region}.`);
     });
-  });
-
-  const contactForm = document.querySelector('.contact-form');
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = contactForm.querySelector('input[type="text"]').value;
-    const email = contactForm.querySelector('input[type="email"]').value;
-    const message = contactForm.querySelector('textarea').value;
-
-    if (name && email && message) {
-      alert(`Terima kasih ${name}!\n\nPesan Anda telah kami terima. Kami akan segera menghubungi Anda melalui email: ${email}`);
-      contactForm.reset();
-    }
   });
 
   const statNumbers = document.querySelectorAll('.stat-number');

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Batik Nusantara - Warisan Budaya Indonesia</title>
+    <title>Bersinar Mentari - Pengrajin Kain</title>
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +20,9 @@
         <div class="logo">Bersinar Mentari</div>
         <ul class="nav-menu">
           <li><a href="#home" class="nav-link">Beranda</a></li>
-          <li><a href="#about" class="nav-link">Tentang</a></li>
-          <li><a href="#gallery" class="nav-link">Galeri</a></li>
-          <li><a href="#motif" class="nav-link">Motif</a></li>
+          <li><a href="#about" class="nav-link">Tentang Kami</a></li>
+          <li><a href="#sasir" class="nav-link">Sasirangan</a></li>
+          <li><a href="#batik" class="nav-link">Batik</a></li>
           <li><a href="#contact" class="nav-link">Kontak</a></li>
         </ul> 
         <div class="hamburger" onclick="toggleMenu()">
@@ -37,8 +37,12 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-title">Bersinar Mentari</h1>
-        <p class="hero-subtitle">Warisan Budaya Tak Benda UNESCO dari Indonesia</p>
-        <button class="cta-button">Jelajahi Koleksi
+        <p class="hero-subtitle">Menghadirkan batik dan sasirangan yang ditenun dari tradisi dan diwujudkan dengan sepenuh hati.</p>
+        <button class="cta-button">
+    <span class="button_lg">
+        <span class="button_sl"></span>
+        <span class="button_text">Jelajahi Koleksi</span>
+    </span>
           <div class="star-1">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +164,29 @@
       </div>
     </section>
 
-    <section id="about" class="about">
+<section class="heroes">
+    <div class="hero-text">
+        <span class="small-title">SELAMAT DATANG DI</span>
+        <h1>BERSINAR MENTARI</h1>
+
+        <p>
+            You will begin to realise why this exercise is called the Dickens Pattern 
+            with reference to the ghost showing Scrooge some different futures.
+        </p>
+
+        <button class="discover-btn">DISCOVER NOW</button>
+    </div>
+
+    <div class="hero-img">
+    <div class="img-box">
+        <img src="Assets/Photo/kain1.jpeg" alt="person">
+    </div>
+</div>
+
+</section>
+
+
+    <section id="sasir" class="sasir">
       <div class="about-header">
         <div class="container">
           <div class="section-header">
@@ -218,7 +244,7 @@
       </div>
      </section>
 
-    <div class="collage-container">
+    <div class="collage-container" id="batik">
       <div class="about-header">
         <div class="container">
           <div class="section-header">
@@ -272,7 +298,7 @@
         </div>
       </div>
 
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
     <div class="contact-container">
         
         <!-- Left info box -->
@@ -311,47 +337,45 @@
 
         <!-- Right form box -->
         <div class="contactForm">
-            <h2>Kirimkan Pesan</h2>
-            <div class="formBox">
-
-                <div class="inputBox w50">
-                    <input type="text" required>
-                    <span>Nama Depan</span>
-                </div>
-
-                <div class="inputBox w50">
-                    <input type="text" required>
-                    <span>Nama Belakang</span>
-                </div>
-
-                <div class="inputBox w50">
-                    <input type="email" required>
-                    <span>Email</span>
-                </div>
-
-                <div class="inputBox w50">
-                    <input type="text" required>
-                    <span>Nomor Telpon</span>
-                </div>
-
-                <div class="inputBox w100">
-                    <textarea required></textarea>
-                    <span>Tuliskan pesan disini...</span>
-                </div>
-
-                <div class="inputBox w100">
-                    <input type="submit" value="Kirim">
-                </div>
-
-            </div>
+    <h2>Kirimkan Pesan</h2>
+    <div class="formBox">
+        <div class="inputBox w50">
+            <input type="text" id="firstName" required>
+            <span>Nama Depan</span>
         </div>
+
+        <div class="inputBox w50">
+            <input type="text" id="lastName" required>
+            <span>Nama Belakang</span>
+        </div>
+
+        <div class="inputBox w50">
+            <input type="email" id="email" required>
+            <span>Email</span>
+        </div>
+
+        <div class="inputBox w50">
+            <input type="text" id="phone" required>
+            <span>Nomor Telpon</span>
+        </div>
+
+        <div class="inputBox w100">
+            <textarea id="message" required></textarea>
+            <span>Tuliskan pesan disini...</span>
+        </div>
+
+        <div class="inputBox w100">
+            <input type="submit" id="sendBtn" value="Kirim">
+        </div>
+    </div>
+</div>
 
     </div>
 </section>
 
     <footer class="footer"> 
       <div class="container">
-        <p>&copy; 2024 Batik Nusantara. Melestarikan Warisan Budaya Indonesia.</p>
+        <p>&copy; 2025 Bersinar Mentari. Melestarikan Warisan Budaya Indonesia.</p>
       </div>
     </footer>
 
@@ -473,5 +497,41 @@
         updateActiveNavLink();
       });
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sendBtn = document.getElementById('sendBtn');
+
+    sendBtn.addEventListener('click', function() {
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const messageText = document.getElementById('message').value.trim();
+
+        if (!firstName || !lastName || !email || !phone || !messageText) {
+            alert("Semua field harus diisi!");
+            return;
+        }
+
+        const waNumber = "6285179717736"; // ganti nomor WA tujuan
+        const message = `Halo Bersinar Mentari, saya ingin mengirim pesan dengan detail:
+Nama: ${firstName} ${lastName}
+Email: ${email}
+Nomor Telpon: ${phone}
+Pesan: ${messageText}`;
+
+        const whatsappUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappUrl, '_blank');
+
+        // Reset field
+        document.getElementById('firstName').value = "";
+        document.getElementById('lastName').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('phone').value = "";
+        document.getElementById('message').value = "";
+    });
+});
+</script>
   </body>
 </html>
