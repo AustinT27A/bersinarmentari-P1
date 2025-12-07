@@ -164,7 +164,7 @@
       <div class="about-header">
         <div class="container">
           <div class="section-header">
-            <h2 class="section-title">Tentang Kami</h2>
+            <h2 class="section-title">Kain Sasirangan</h2>
             <div class="section-line"></div>
           </div>
         </div>
@@ -215,58 +215,59 @@
       </div>
     </section>
 
-    <section id="gallery" class="gallery">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Galeri Batik</h2>
-          <div class="section-line"></div>
-        </div>
-        <div class="gallery-grid">
-          <div class="gallery-item" data-region="Yogyakarta">
-            <img src="assets/Photo/Batik6.png" alt="Batik Parang" />
-            <div class="gallery-overlay">
-              <h3>Batik Parang</h3>
-              <p>Yogyakarta</p>
-            </div>
-          </div>
-          <div class="gallery-item" data-region="Solo">
-            <img src="assets/Photo/Batik8.png" alt="Batik Kawung" />
-            <div class="gallery-overlay">
-              <h3>Batik Kawung</h3>
-              <p>Solo</p>
-            </div>
-          </div>
-          <div class="gallery-item" data-region="Pekalongan">
-            <img src="assets/Photo/Batik9.png" alt="Batik Jlamprang" />
-            <div class="gallery-overlay">
-              <h3>Batik Jlamprang</h3>
-              <p>Pekalongan</p>
-            </div>
-          </div>
-          <div class="gallery-item" data-region="Cirebon">
-            <img src="assets/Photo/Batik10.png" alt="Batik Mega Mendung" />
-            <div class="gallery-overlay">
-              <h3>Batik Mega Mendung</h3>
-              <p>Cirebon</p>
-            </div>
-          </div>
-          <div class="gallery-item" data-region="Madura">
-            <img src="assets/Photo/Batik11.png" alt="Batik Gentongan" />
-            <div class="gallery-overlay">
-              <h3>Batik Gentongan</h3>
-              <p>Madura</p>
-            </div>
-          </div>
-          <div class="gallery-item" data-region="Bali">
-            <img src="assets/Photo/Batik12.png" alt="Batik Prada" />
-            <div class="gallery-overlay">
-              <h3>Batik Prada</h3>
-              <p>Bali</p>
-            </div>
+    <div class="collage-container">
+      <div class="about-header">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Batik Tabalong</h2>
+            <div class="section-line"></div>
           </div>
         </div>
       </div>
-    </section>
+        <div class="collage-grid">
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik8.png" alt="Batik8">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik4.jpg" alt="Batik4">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik9.png" alt="Batik9">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik10.png" alt="Batik10">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik12.png" alt="Batik12">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik5.jpg" alt="Batik5">
+          </div>
+
+          <!-- overlay-card dipindahkan ke dalam collage-grid
+               sehingga posisi absolute akan relatif terhadap grid ini -->
+          <div class="overlay-card">
+            <div class="btn-row">
+              <button class="info-btn" data-info="1">Gigi Haruwan</button>
+            </div>
+            <div class="btn-row">
+              <button class="info-btn" data-info="2">Langsat</button>
+            </div>
+            <div class="btn-row">
+              <button class="info-btn" data-info="3">Tameng Dayak</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="explanation-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h2 id="modal-title"></h2>
+          <p id="modal-text"></p>
+        </div>
+      </div>
 
     <section id="motif" class="motif">
       <div class="container">
@@ -383,6 +384,7 @@
     </footer>
 
     <script type="module" src="main.js"></script>
+    <script src="collage.js"></script>
     
     <script>
       // Simple hamburger menu function
