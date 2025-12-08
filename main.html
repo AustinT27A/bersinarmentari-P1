@@ -41,8 +41,11 @@
         <p class="hero-subtitle">Menghadirkan batik dan sasirangan yang ditenun dari tradisi dan diwujudkan dengan sepenuh hati.</p>
         <button class="cta-button">
     <span class="button_lg">
-        <span class="button_sl"></span>
-        <span class="button_text">Jelajahi Koleksi</span>
+        <a href="#about" class="button_lg">
+    <span class="button_sl"></span>
+    <span class="button_text">Jelajahi Koleksi</span>
+</a>
+
     </span>
           <div class="star-1">
     <svg
@@ -178,9 +181,8 @@
 
     <!-- SOCIAL ICONS (di bawah deskripsi) -->
     <div class="socials fancy">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/khirufata242"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/6285179717736"><i class="fab fa-whatsapp"></i></a>
 </div>
 </div>
 </div>
@@ -241,62 +243,62 @@
       </div>
 
     <section id="sasir" class="sasir">
-      <div class="about-header">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Kain Sasirangan</h2>
+      <div class="section-header">
+            <h2 class="section-title">Motif Sasirangan</h2>
             <div class="section-line"></div>
           </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="about-content">
-          <!-- kiri: daftar kain -->
-          <div class="about-list">
-            <div class="list-item" data-index="0">
-              <h3>Motif Langsat</h3>
-              <p>melambangkan kesuburan dan kemakmuran, terinspirasi dari buah langsat yang menjadi simbol kelimpahan dan keberlanjutan hidup. Motif ini mencerminkan hubungan harmonis antara manusia dan alam serta nilai kebersamaan dalam masyarakat Dayak, dengan harapan akan kehidupan yang makmur dan penuh keberuntungan.
-</p>
-            </div>
-            <div class="list-item" data-index="1">
-              <h3>Motif Gigi Haruan</h3>
-              <p>menggambarkan ketangguhan dan perlindungan. Terinspirasi dari gigi ikan haruan, yang dikenal karena kekuatannya dalam bertahan hidup, motif ini mencerminkan daya tahan, kelincahan, dan keberanian dalam menghadapi bahaya. Ia juga menjadi simbol kekuatan untuk melindungi diri dan keluarga.
-</p>
-            </div>
-            <div class="list-item" data-index="2">
-              <h3>Motif Tameng Dayak</h3>
-              <p>adalah simbol kekuatan dan perlindungan spiritual. Terinspirasi dari perisai tradisional Dayak, motif ini melambangkan keberanian, proteksi dari energi negatif, serta identitas suku dan garis keturunan. Ia sering digunakan untuk menunjukkan perlindungan baik dalam peperangan maupun kehidupan sehari-hari.</p>
-            </div>
-            <div class="list-item" data-index="3">
-              <h3>Motif Naga Berlembu</h3>
-              <p>melambangkan kekuatan agung, perlindungan, dan keseimbangan alam. Terinspirasi dari sosok naga dalam kepercayaan Dayak yang dianggap sebagai penjaga dunia dan pemberi kehidupan, motif ini menggambarkan wibawa, kebijaksanaan, serta kekuatan spiritual yang mengalir dalam masyarakat. Naga berlembur juga menjadi simbol harmoni antara manusia, roh, dan alam semesta.</p>
-            </div>
-          </div>
+  <div class="main-wrapper">
 
-          <!-- kanan: panel gambar besar (slider) -->
-          <div class="about-gallery">
-            <div class="slider-container">
-              <button class="slider-btn prev" aria-label="Sebelumnya" onclick="prevImage()">❮</button>
-              <div class="slider-wrapper" id="sasirangan-slider">
-                <img src="Assets/Photo/Batik1.jpg" class="gallery-img active" alt="Pecah Kulit">
-                <img src="Assets/Photo/Batik2.jpg" class="gallery-img" alt="Karang">
-                <img src="Assets/Photo/Batik3.jpg" class="gallery-img" alt="Bintang">
-                <img src="Assets/Photo/Batik6.png" class="gallery-img" alt="Bunga">
-                <img src="Assets/Photo/Batik11.png" class="gallery-img" alt="Koleksi">
-              </div>
-              <button class="slider-btn next" aria-label="Selanjutnya" onclick="nextImage()">❯</button>
-            </div>
-            <div class="slider-dots" id="sasirangan-dots">
-              <span class="dot active" onclick="currentImage(0)"></span>
-              <span class="dot" onclick="currentImage(1)"></span>
-              <span class="dot" onclick="currentImage(2)"></span>
-              <span class="dot" onclick="currentImage(3)"></span>
-              <span class="dot" onclick="currentImage(4)"></span>
-            </div>
-          </div>
+  <div class="sasir-container">
+
+    <!-- === SLIDESHOW === -->
+    <div class="sasir-slideshow">
+        <button class="slide-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slide-btn next" onclick="moveSlide(1)">&#10095;</button>
+
+        <div class="slide active">
+          <img src="Assets/Photo/Batik1.jpg" />
         </div>
-      </div>
-     </section>
+        <div class="slide">
+          <img src="Assets/Photo/Batik2.jpg" />
+        </div>
+        <div class="slide">
+          <img src="Assets/Photo/Batik3.jpg" />
+        </div>
+        <div class="slide">
+          <img src="Assets/Photo/Batik6.png" />
+        </div>
+        <div class="slide">
+          <img src="Assets/Photo/Batik11.png" />
+        </div>
+    </div>
+
+    <!-- === 4 CARDS === -->
+    <div class="card-grid">
+        <div class="notification">
+          <div class="notititle">Motif Langsat</div>
+          <div class="notibody">melambangkan kesuburan dan kemakmuran, terinspirasi dari buah langsat yang menjadi simbol kelimpahan dan keberlanjutan hidup. Motif ini mencerminkan hubungan harmonis antara manusia dan alam serta nilai kebersamaan dalam masyarakat Dayak, dengan harapan akan kehidupan yang makmur dan penuh keberuntungan.
+</div>
+        </div>
+        <div class="notification">
+          <div class="notititle">Motif Gigi Haruwan</div>
+          <div class="notibody">menggambarkan ketangguhan dan perlindungan. Terinspirasi dari gigi ikan haruan, yang dikenal karena kekuatannya dalam bertahan hidup, motif ini mencerminkan daya tahan, kelincahan, dan keberanian dalam menghadapi bahaya. Ia juga menjadi simbol kekuatan untuk melindungi diri dan keluarga.
+</div>
+        </div>
+        <div class="notification">
+          <div class="notititle">Motif Tameng Dayak</div>
+          <div class="notibody">adalah simbol kekuatan dan perlindungan spiritual. Terinspirasi dari perisai tradisional Dayak, motif ini melambangkan keberanian, proteksi dari energi negatif, serta identitas suku dan garis keturunan. Ia sering digunakan untuk menunjukkan perlindungan baik dalam peperangan maupun kehidupan sehari-hari.</div>
+        </div>
+        <div class="notification">
+          <div class="notititle">Motif Naga Berlembur</div>
+          <div class="notibody">melambangkan kekuatan agung, perlindungan, dan keseimbangan alam. Terinspirasi dari sosok naga dalam kepercayaan Dayak yang dianggap sebagai penjaga dunia dan pemberi kehidupan, motif ini menggambarkan wibawa, kebijaksanaan, serta kekuatan spiritual yang mengalir dalam masyarakat. Naga berlembur juga menjadi simbol harmoni antara manusia, roh, dan alam semesta./div>
+        </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
 
       </div>
 
@@ -542,6 +544,47 @@ Pesan: ${messageText}`;
         document.getElementById('message').value = "";
     });
 });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  let index = 0;
+  const slides = document.querySelectorAll(".sasir-slideshow .slide");
+  const nextBtn = document.querySelector(".slide-btn.next");
+  const prevBtn = document.querySelector(".slide-btn.prev");
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[i].classList.add("active");
+  }
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+});
+</script>
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(n) {
+  slides[index].classList.remove("active");
+  index = (n + slides.length) % slides.length;
+  slides[index].classList.add("active");
+}
+
+function moveSlide(step) {
+  showSlide(index + step);
+}
+
+setInterval(() => moveSlide(1), 3500);
 </script>
   </body>
 </html>

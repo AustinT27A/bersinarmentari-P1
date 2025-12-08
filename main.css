@@ -385,6 +385,7 @@ h1, h2, h3, h4 {
   background-color: var(--dark-color);
   overflow: hidden;
   box-shadow: inset 0px 0px 0px 1px transparent;
+  text-decoration: none;
 }
 
 .button_lg::before {
@@ -1320,6 +1321,7 @@ input[type="submit"]:hover {
     justify-content: center;
     margin-top: 60px;
     margin-bottom: 40px;
+    
 }
 
 .socials.fancy {
@@ -2036,149 +2038,151 @@ div.item:hover .item-overlay{
   .slider-btn.prev { left: 6px; }
   .slider-btn.next { right: 6px; }
 }
-/* ===========================
-   RESPONSIVE — MAX WIDTH 1200px
-   =========================== */
-@media (max-width: 1200px) {
 
-  .contact-container {
-    min-width: auto;
-    width: 90%;
-  }
 
-  .contactForm {
-    margin-left: 200px;
-    padding-left: 230px;
-  }
+
+/* === WRAPPER BOX BESAR === */
+.main-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px;
+
+  background: rgba(80, 60, 40, 0.25);   /* coklat translucent */
+  backdrop-filter: blur(8px);
+
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+
+  /* biar semua isi rata tengah */
+  display: flex;
+  justify-content: center;
 }
 
-/* ===========================
-   RESPONSIVE — TABLET LANDSCAPE
-   MAX WIDTH 992px
-   =========================== */
-@media (max-width: 992px) {
 
-  .contact-section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-
-  .contact-container {
-    flex-direction: column;
-    min-height: auto;
-    position: relative;
-  }
-
-  /* Left info full width */
-  .contactInfo {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 50px;
-    top: 0;
-  }
-
-  /* Form di bawahnya */
-  .contactForm {
-    position: relative;
-    margin-left: 0;
-    padding: 50px 40px;
-    padding-left: 40px;
-    width: 100%;
-    height: auto;
-  }
-
-  .formBox {
-    gap: 20px;
-  }
-
-  .inputBox.w50 {
-    width: 48%;
-  }
+.sasir-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
-/* ===========================
-   RESPONSIVE — TABLET PORTRAIT
-   MAX WIDTH 768px
-   =========================== */
+/* --- Slideshow --- */
+.sasir-slideshow {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.sasir-slideshow .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.sasir-slideshow .slide.active {
+  opacity: 1;
+}
+
+.sasir-slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 32px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slide-btn.prev { left: 16px; }
+.slide-btn.next { right: 16px; }
+
+/* === GRID 4 CARD === */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  width: 100%;
+}
+
+/* --- Card Notification Template --- */
+.notification {
+  position: relative;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  font-family: 'Gill Sans', Calibri, sans-serif;
+
+  /* bg translucent putih gelap */
+  background: whitesmoke;
+  backdrop-filter: blur(18px) brightness(0.60);
+
+  z-index: 1;
+}
+
+/* Rainbow Animated Border */
+.notification::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color),
+    var(--primary-color)
+  );
+  background-size: 300% 300%;
+  animation: borderMove 6s linear infinite;
+
+  -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  z-index: -1;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text inside card */
+.notititle {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.notibody {
+  color: var(--dark-color);
+  font-size: 0.88rem;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-
-  .inputBox.w50 {
-    width: 100%;
-  }
-
-  .contactInfo {
-    padding: 40px;
-  }
-
-  .contactForm {
-    padding: 40px 30px;
-  }
-
-  .contactInfo h2, 
-  .contactForm h2 {
-    font-size: 22px;
-  }
-}
-
-/* ===========================
-   RESPONSIVE — MOBILE
-   MAX WIDTH 576px
-   =========================== */
-@media (max-width: 576px) {
-
-  .contact-section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  .contactInfo {
-    padding: 30px;
-  }
-
-  .contactForm {
-    padding: 30px 20px;
-  }
-
-  .inputBox span {
-    font-size: 14px;
-  }
-
-  input[type="submit"] {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .contactInfo ul.info li i {
-    font-size: 18px;
-  }
-
-  .contactInfo ul.socialIcon li img {
-    width: 22px;
-  }
-}
-
-/* ===========================
-   RESPONSIVE — SMALL MOBILE
-   MAX WIDTH 430px
-   =========================== */
-@media (max-width: 430px) {
-
-  .contactInfo h2,
-  .contactForm h2 {
-    font-size: 20px;
-  }
-
-  .inputBox input,
-  .inputBox textarea {
-    font-size: 15px;
-  }
-
-  .contactInfo {
-    padding: 25px;
-  }
-
-  .contactForm {
-    padding: 25px 18px;
-  }
+  .sasir-slideshow { height: 240px; }
+  .card-grid { grid-template-columns: 1fr; }
 }
