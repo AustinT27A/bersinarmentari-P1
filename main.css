@@ -240,6 +240,7 @@ h1, h2, h3, h4 {
 
 .hero-text {
     max-width: 500px;
+    color : var(--dark-color)
 }
 
 .small-title {
@@ -726,7 +727,7 @@ h1, h2, h3, h4 {
 .section-title {
   font-size: 48px;
   color: var(--primary-color);
-  margin-bottom: 16px;
+  margin-bottom: 0px;
 }
 
 .section-line {
@@ -854,6 +855,10 @@ div.item:nth-of-type(5) {
   padding: 120px 0;
   background: var(--white);
   position: relative;
+}
+
+.sasir {
+  margin-bottom: 50px;
 }
 
 .about-header {
@@ -997,7 +1002,15 @@ div.item:nth-of-type(5) {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: var(--light-color);
+     background: linear-gradient(
+              rgba(0, 0, 0, 0.5),   /* atas transparan gelap */
+              rgba(0, 0, 0, 0.5)    /* bawah transparan gelap */
+            ),
+            url('assets/Photo/manequin.jpeg');   /* ganti dengan gambar kamu */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
     padding-top: 120px;
     padding-bottom: 120px;
 }
@@ -1300,6 +1313,66 @@ input[type="submit"]:hover {
   }
 }
 
+
+.card-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.socials.fancy {
+    margin: 0px 0;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.socials.fancy a {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: 0.25s;
+}
+
+.socials.fancy a:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* CARD */
+.card {
+    background: #ffffff;
+    width: 80%;
+    max-width: 900px;
+    padding: 60px;
+    border-radius: 18px;
+    text-align: center;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* CENTERED TEXT */
+.card h1 {
+    font-size: 48px;
+    margin: 0 0 20px 0;
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+}
+
+.card p {
+    font-size: 18px;
+    color: #666;
+}
+
 @media (max-width: 768px) {
   .navbar {
     width: 90%;
@@ -1476,6 +1549,7 @@ div.item:hover .item-overlay{
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .collage-grid {

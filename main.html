@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +22,8 @@
         <ul class="nav-menu">
           <li><a href="#home" class="nav-link">Beranda</a></li>
           <li><a href="#about" class="nav-link">Tentang Kami</a></li>
+          <li><a href="#tabalong" class="nav-link">Batik</a></li>
           <li><a href="#sasir" class="nav-link">Sasirangan</a></li>
-          <li><a href="#batik" class="nav-link">Batik</a></li>
           <li><a href="#contact" class="nav-link">Kontak</a></li>
         </ul> 
         <div class="hamburger" onclick="toggleMenu()">
@@ -164,27 +165,80 @@
       </div>
     </section>
 
-<section class="heroes">
-    <div class="hero-text">
-        <span class="small-title">SELAMAT DATANG DI</span>
-        <h1>BERSINAR MENTARI</h1>
+<div class="card-wrapper" id="about">
+    <div class="card centered">
+    <h1 class="about-title"tyle="letter-spacing: 2px;">Tentang Bersinar Mentari</h1>
 
-        <p>
-            You will begin to realise why this exercise is called the Dickens Pattern 
-            with reference to the ghost showing Scrooge some different futures.
-        </p>
+    <p style="font-size: 15px;margin-bottom: 20px;">
+        Kami adalah pengrajin kain batik dan sasirangan dengan berbagai pilihan 
+        motif tradisional yang dikerjakan secara handmade. Setiap kain memiliki 
+        karakter dan makna budaya yang berbeda. Harga bervariasi tergantung 
+        jenis bahan kain serta tingkat kerumitan motif.
+    </p>
 
-        <button class="discover-btn">DISCOVER NOW</button>
-    </div>
-
-    <div class="hero-img">
-    <div class="img-box">
-        <img src="Assets/Photo/kain1.jpeg" alt="person">
-    </div>
+    <!-- SOCIAL ICONS (di bawah deskripsi) -->
+    <div class="socials fancy">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
 </div>
 
-</section>
 
+<div class="collage-container" id="tabalong">
+      <div class="about-header">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Batik Tabalong</h2>
+            <div class="section-line"></div>
+          </div>
+        </div>
+      </div>
+        <div class="collage-grid">
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik8.png" alt="Batik8">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik4.jpg" alt="Batik4">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik9.png" alt="Batik9">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik10.png" alt="Batik10">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik12.png" alt="Batik12">
+          </div>
+          <div class="collage-item">
+            <img src="Assets/Photo/Batik5.jpg" alt="Batik5">
+          </div>
+
+          <!-- overlay-card dipindahkan ke dalam collage-grid
+               sehingga posisi absolute akan relatif terhadap grid ini -->
+          <div class="overlay-card">
+            <div class="btn-row">
+              <button class="info-btn" data-info="1">Gigi Haruwan</button>
+            </div>
+            <div class="btn-row">
+              <button class="info-btn" data-info="2">Langsat</button>
+            </div>
+            <div class="btn-row">
+              <button class="info-btn" data-info="3">Tameng Dayak</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="explanation-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h2 id="modal-title"></h2>
+          <p id="modal-text"></p>
+        </div>
+      </div>
 
     <section id="sasir" class="sasir">
       <div class="about-header">
@@ -243,50 +297,6 @@
         </div>
       </div>
      </section>
-
-    <div class="collage-container" id="batik">
-      <div class="about-header">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Batik Tabalong</h2>
-            <div class="section-line"></div>
-          </div>
-        </div>
-      </div>
-        <div class="collage-grid">
-          <div class="collage-item">
-            <img src="Assets/Photo/Batik8.png" alt="Batik8">
-          </div>
-          <div class="collage-item">
-            <img src="Assets/Photo/Batik4.jpg" alt="Batik4">
-          </div>
-          <div class="collage-item">
-            <img src="Assets/Photo/Batik9.png" alt="Batik9">
-          </div>
-          <div class="collage-item">
-            <img src="Assets/Photo/Batik10.png" alt="Batik10">
-          </div>
-          <div class="collage-item">
-            <img src="Assets/Photo/Batik12.png" alt="Batik12">
-          </div>
-          <div class="collage-item">
-            <img src="Assets/Photo/Batik5.jpg" alt="Batik5">
-          </div>
-
-          <!-- overlay-card dipindahkan ke dalam collage-grid
-               sehingga posisi absolute akan relatif terhadap grid ini -->
-          <div class="overlay-card">
-            <div class="btn-row">
-              <button class="info-btn" data-info="1">Gigi Haruwan</button>
-            </div>
-            <div class="btn-row">
-              <button class="info-btn" data-info="2">Langsat</button>
-            </div>
-            <div class="btn-row">
-              <button class="info-btn" data-info="3">Tameng Dayak</button>
-            </div>
-          </div>
-        </div>
 
       </div>
 
